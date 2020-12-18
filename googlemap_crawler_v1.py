@@ -4,11 +4,13 @@
 import requests 
 import json
 import csv
+import time
 
 # 商家資訊
 
 # 讀入店家資訊連結
 url_1 = input("輸入 Request URL (place?authuser...)\n")
+time.sleep(1)
 
 # 發送 get 請求
 text_1 = requests.get(url_1).text
