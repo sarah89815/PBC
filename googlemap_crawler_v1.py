@@ -7,10 +7,9 @@ import csv
 import time
 
 # 商家資訊
-
+time.sleep(1)
 # 讀入店家資訊連結
 url_1 = input("輸入 Request URL (place?authuser...)\n")
-time.sleep(1)
 
 # 發送 get 請求
 text_1 = requests.get(url_1).text
@@ -69,6 +68,7 @@ with open(file = filepath, mode='a+', encoding='utf-8', newline='') as f2:
         str_ = "1i" + str(i) + "!"    
         url_2 = str_.join(tmp)
 
+        time.sleep(1)
         # 發送 get 請求
         text_2 = requests.get(url_2).text
         # 取代掉特殊字元，這個字元是為了資訊安全而設定
@@ -84,14 +84,14 @@ with open(file = filepath, mode='a+', encoding='utf-8', newline='') as f2:
             # 用戶名
             username = str(j[0][1])
             # 評論時間
-            time = str(j[1])
+            comment_time = str(j[1])
             # 評價星等
             rating = str(j[4])
             # 評價內容（刪除換行符號）
             comment = str(j[3])
             comment = comment.replace('\n', ' ')
 
-            tmp_list_2 = [username, time, rating, comment]
+            tmp_list_2 = [username, comment_time, rating, comment]
             writer.writerow(tmp_list_2)
 
 print("\n" + str(store_name) + "\nFINISH!\n")
