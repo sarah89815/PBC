@@ -105,10 +105,8 @@ for i in range(len(name_list)):
         words = words.split('\n')
         tmp_list_2 = list()
 
-        cnt = int((len(words) - 1) / 2)
-
-        for i in range(cnt):
-            tmp_list_2.append([words[2*i + 1], words[2*i + 2]])
+        for i in range(1, len(words)):
+            tmp_list_2.append(words[i])
         # tmp_list_2 = [word1, fig1, word2, fig2, word3, fig3, word4, fig4, word5, fig5, word6, fig6, word7, fig7, word8, fig8, word9, fig9, word10, fig10]
         writer.writerow(tmp_list_1)
         writer.writerow(tmp_list_2)
