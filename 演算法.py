@@ -28,8 +28,6 @@ with open(file=filepath, mode='r', encoding='utf-8', newline='') as csvfile:
         while True:
             if '' in row[3:len(row)]:
                 row.remove('')
-            elif 'null' in row[3:len(row)]:
-                row.remove('null')
             else:
                 break
 
@@ -38,7 +36,6 @@ with open(file=filepath, mode='r', encoding='utf-8', newline='') as csvfile:
 
         # 轉成 store 類別存入 stores 清單
         stores.append(Store(row[0], price_intl[0], price_intl[1], row[2], row[3:len(row)]))
-        print(row[3:len(row)])
 
 # 定義過濾函式
 # 傳入待過濾的商家清單以及關鍵字
