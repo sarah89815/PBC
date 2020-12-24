@@ -24,7 +24,7 @@ with open(file='C:\\Users\\JasonChen\\Desktop\\github\\self_only\\store_info_5.c
     for row in rows:
         name_list.append(row[0])
 
-for store in name_list:
+for i in range(len(name_list)):
 
     # 主要用途為取消網頁中的彈出視窗，避免妨礙網路爬蟲的執行。
     options = Options()
@@ -45,7 +45,7 @@ for store in name_list:
     time.sleep(5)
     searchbox_input = chrome.find_element_by_id("searchboxinput")
     time.sleep(2)
-    searchbox_input.send_keys(store)
+    searchbox_input.send_keys(name_list[i])
     time.sleep(2)
     searchbox_input.send_keys(Keys.ENTER)
     time.sleep(5)
@@ -66,30 +66,32 @@ for store in name_list:
     time.sleep(3)
     btn = chrome.find_element_by_xpath("/html/body/jsl/div[3]/div[9]/div[7]/div/div[1]/div/div/div[2]/div[1]/div[1]/div[2]/div/div[1]/span[1]/span/span/span[2]/span[1]/button")
     btn.click()
-    time.sleep(3)
+    time.sleep(5)
     # google自己的關鍵字(word)和提到幾次(figure)
-    word1 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[2]/div/button/span[1]").text
-    word2 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[3]/div/button/span[1]").text
-    word3 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[4]/div/button/span[1]").text
-    word4 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[5]/div/button/span[1]").text
-    word5 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[6]/div/button/span[1]").text
-    word6 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[7]/div/button/span[1]").text
-    word7 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[8]/div/button/span[1]").text
-    word8 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[9]/div/button/span[1]").text
-    word9 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[10]/div/button/span[1]").text
-    word10 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[11]/div/button/span[1]").text
-    fig1 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[2]/div/button/span[2]").text
-    fig2 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[3]/div/button/span[2]").text
-    fig3 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[4]/div/button/span[2]").text
-    fig4 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[5]/div/button/span[2]").text
-    fig5 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[6]/div/button/span[2]").text
-    fig6 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[7]/div/button/span[2]").text
-    fig7 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[8]/div/button/span[2]").text
-    fig8 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[9]/div/button/span[2]").text
-    fig9 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[10]/div/button/span[2]").text
-    fig10 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[11]/div/button/span[2]").text
+    words = chrome.find_element_by_xpath("/html/body/jsl/div[3]/div[9]/div[7]/div/div[1]/div/div/div[2]/div[8]").text
+
+    # word1 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[2]/div/button/span[1]").text
+    # word2 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[3]/div/button/span[1]").text
+    # word3 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[4]/div/button/span[1]").text
+    # word4 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[5]/div/button/span[1]").text
+    # word5 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[6]/div/button/span[1]").text
+    # word6 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[7]/div/button/span[1]").text
+    # word7 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[8]/div/button/span[1]").text
+    # word8 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[9]/div/button/span[1]").text
+    # word9 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[10]/div/button/span[1]").text
+    # word10 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[11]/div/button/span[1]").text
+    # fig1 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[2]/div/button/span[2]").text
+    # fig2 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[3]/div/button/span[2]").text
+    # fig3 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[4]/div/button/span[2]").text
+    # fig4 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[5]/div/button/span[2]").text
+    # fig5 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[6]/div/button/span[2]").text
+    # fig6 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[7]/div/button/span[2]").text
+    # fig7 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[8]/div/button/span[2]").text
+    # fig8 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[9]/div/button/span[2]").text
+    # fig9 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[10]/div/button/span[2]").text
+    # fig10 = chrome.find_element_by_xpath("//*[@id='pane']/div/div[1]/div/div/div[2]/div[8]/div[11]/div/button/span[2]").text
     chrome.close()
-    
+
     # 追加寫入 store_info.csv 檔
     # 記得改成自己存檔的位置
     filepath = r'C:\Users\JasonChen\Desktop\github\self_only\googlemap_info.csv'
@@ -99,7 +101,15 @@ for store in name_list:
         writer = csv.writer(f1)
 
         tmp_list_1 = [store_name, lon, lat, avg_rating]
-        tmp_list_2 = [word1, fig1, word2, fig2, word3, fig3, word4, fig4, word5, fig5, word6, fig6, word7, fig7, word8, fig8, word9, fig9, word10, fig10]
+
+        words = words.split('\n')
+        tmp_list_2 = list()
+
+        cnt = int((len(words) - 1) / 2)
+
+        for i in range(cnt):
+            tmp_list_2.append([words[2*i + 1], words[2*i + 2]])
+        # tmp_list_2 = [word1, fig1, word2, fig2, word3, fig3, word4, fig4, word5, fig5, word6, fig6, word7, fig7, word8, fig8, word9, fig9, word10, fig10]
         writer.writerow(tmp_list_1)
         writer.writerow(tmp_list_2)
     print("\n" + str(store_name) + "\nFINISH!\n")
