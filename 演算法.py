@@ -15,27 +15,28 @@ class Store:
 
 # 所有商家清單
 stores = list()
+# 商家關鍵字清單
+store_keywords = list()
 
 # 記得改成存檔案的地方
-filepath = r'/Users/yuchiaching/Desktop/GitHub/PBC_Final/store_info.csv'
+filepath = r'/Users/yuchiaching/Desktop/GitHub/PBC_Final/store_info_final.csv'
 
 with open(file=filepath, mode='r', encoding='utf-8', newline='') as csvfile:
     rows = csv.reader(csvfile)
 
+    rows_cnt = 0
     for row in rows:
 
-        # 清除空值項目
-        while True:
-            if '' in row[3:len(row)]:
-                row.remove('')
-            else:
-                break
+        if rows_cnt % 2 == 0:
+            # 將價格區間切分為上界和下界儲存
+            price_intl = row[4].split('-')
 
-        # 將價格區間切分為上界和下界儲存
-        price_intl = row[1].split('-')
+            # 轉成 store 類別存入 stores 清單
+            stores.append(Store(row[0], price_intl[0], price_intl[1], row[5], row[6:len(row)]))
+        else:
+            store_keywords.append(row)
 
-        # 轉成 store 類別存入 stores 清單
-        stores.append(Store(row[0], price_intl[0], price_intl[1], row[2], row[3:len(row)]))
+        rows_cnt += 1
 
 # 定義過濾函式
 # 傳入待過濾的商家清單以及關鍵字
