@@ -54,31 +54,40 @@ muti_b_c = tk.Label(window, text='複選', font=('Helvetica Neue', 15), bg='#ED9
 value_b_c = tk.Label(window, text='評價', font=('Helvetica Neue', 15), bg='#ED9A47', fg='white')
 country_b_c = tk.Label(window, text='國家', font=('Helvetica Neue', 15), bg='#ED9A47', fg='white')
 region_b_c = tk.Label(window, text='地區', font=('Helvetica Neue', 15), bg='#ED9A47', fg='white')
-secondquestion = tk.Label(window, text='你會想要甚麼種類呢？', bg='lightgrey' ,font=('Helvetica Neue','15'), fg = 'black')
+secondquestion_type = tk.Label(window, text='你會想要甚麼種類呢？', bg='lightgrey' ,font=('Helvetica Neue','15'), fg = 'black')
 category_chose = tk.Label(window, text='種類', bg='lightgrey' ,font=('Helvetica Neue','15'), fg='black')
 category_menu_b= tk.Button(window, bg='orangered', fg="white", text='種類選單', font=('Helvetica Neue', 18))
 
-# 按下"種類選單"後消除介面上所有對話框
+# 按下"種類選單"後消除之前介面上新增的對話
 def clear2_type():
+    secondquestion_type.destroy()
+    category_chose.destroy()
+    category_menu_b.destroy()
+
+# 按下"種類選單"後消除之前介面上原始的對話框
+def clear2_forall():
     firstquestion_c.destroy()
-    secondquestion.destroy()
     price_b_c.destroy()
     category_b_c.destroy()
     value_b_c.destroy()
     muti_b_c.destroy()      
     country_b_c.destroy()
     region_b_c.destroy()
-    category_chose.destroy()
-    category_menu_b.destroy()
+
+# 按下"種類選單"後消除介面上所有對話框
+def clear2sum_type():
+    clear2_type()
+    clear2_forall()
 
 #選"種類"後新增的對話框
 def create_category_type():
     category_chose.place(x=306, y=523,width=80, height=40)
     category_menu_b.place(x=214, y=632,width=175, height=40)
-    secondquestion.place(x=21, y=565,width=203, height=50)
-    category_menu_b.config(command=clear2_type)
+    secondquestion_type.place(x=21, y=565,width=203, height=50)
+    category_menu_b.config(command=clear2sum_type)
     
-    # 選"種類"之後原對話上移(但其實是重新建造新對話框)
+# 不管哪條線都相同的函數(原對話上移，但其實是重新建造新對話框)
+def moveup():
     firstquestion_c.place(x=30, y=359,width=198, height=50)
     price_b_c.place(x=126, y=416,width=80, height=40)
     category_b_c.place(x=216, y=416,width=80, height=40)
@@ -97,7 +106,9 @@ def clear1_type():
     country_b.destroy()
     region_b.destroy()
     create_category_type()
+    moveup()
 # 選"國家"後原來的按鈕不要
+# def clear1_
 
 # 選擇"種類"後要執行的函數
 category_b.config(command=clear1_type)
