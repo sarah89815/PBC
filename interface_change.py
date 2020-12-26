@@ -7,6 +7,7 @@ import tkinter as tk
 
 # 建keyword清單
 keyword = list()
+upperbound = list()
 
 # 建立視窗
 window = tk.Tk()
@@ -88,6 +89,27 @@ country_b16 = tk.Button(window, text='以色列料理', bg='lightgrey', fg='blac
 country_b17 = tk.Button(window, text='加拿大料理', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
 country_b18 = tk.Button(window, text='夏威夷生魚飯', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
 country_b19 = tk.Button(window, text='確定', bg='orangered', fg='white', font=('Helvetica Neue', 13))
+# region線的部分
+secondquestion_region = tk.Label(window, text='你會想要在那裡吃呢？', bg='lightgrey' ,font=('Helvetica Neue',15), fg = 'black')
+region_chose = tk.Label(window, text='地區', bg='lightgrey',font=('Helvetica Neue', 15), fg='black')
+region_b1 = tk.Button(window, bg='lightgrey', fg="black", text='溫州街', font=('Helvetica Neue', 15))
+region_b2 = tk.Button(window, bg='lightgrey', fg="black", text='後門', font=('Helvetica Neue', 15))
+region_b3 = tk.Button(window, bg='lightgrey', fg="black", text='公館', font=('Helvetica Neue', 15))
+region_confirm = tk.Button(window, bg='orangered', fg='white', text='確定', font=('Helvetica Neue', 12))
+region_l1 = tk.Label(window, text='溫州街', bg='orangered',font=('Helvetica Neue', 15), fg='white')
+region_l2 = tk.Label(window, text='後門', bg='orangered',font=('Helvetica Neue', 15), fg='white')
+region_l3 = tk.Label(window, text='公館', bg='orangered',font=('Helvetica Neue', 15), fg='white')
+# price線的部分
+secondquestion_price = tk.Label(window, text='你想要甚麼價位呢？', bg='lightgrey' ,font=('Helvetica Neue',15), fg = 'black')
+price_chose = tk.Label(window, text='價錢', bg='lightgrey',font=('Helvetica Neue', 15), fg='black')
+price_b1 = tk.Button(window, bg='lightgrey', fg="black", text='< $100', font=('Helvetica Neue', 15))
+price_b2 = tk.Button(window, bg='lightgrey', fg="black", text='< $200', font=('Helvetica Neue', 15))
+price_b3 = tk.Button(window, bg='lightgrey', fg="black", text='< $300', font=('Helvetica Neue', 15))
+price_b4 = tk.Button(window, bg='lightgrey', fg="black", text='< $400', font=('Helvetica Neue', 15))
+price_b5 = tk.Button(window, bg='lightgrey', fg="black", text='< $500', font=('Helvetica Neue', 15))
+price_b6 = tk.Button(window, bg='lightgrey', fg="black", text='< $600', font=('Helvetica Neue', 15))
+price_b7 = tk.Button(window, bg='lightgrey', fg="black", text='< $700', font=('Helvetica Neue', 15))
+price_b8 = tk.Button(window, bg='lightgrey', fg="black", text='> $700', font=('Helvetica Neue', 15))
 
 '''六條線都需要的函數'''
 # 消除之前介面上「原始的」對話框，適用所有線!(因為最原始的對話大家都一樣)
@@ -100,7 +122,7 @@ def clear2_forall():
     country_b_c.destroy()
     region_b_c.destroy()
 
-# 不管哪條線都相同的函數!(原對話上移，但其實是重新建造新對話框)
+# 種類、國家、地區線都相同的函數!(原對話上移，但其實是重新建造新對話框)
 def moveup():
     firstquestion_c.place(x=30, y=359,width=198, height=50)
     price_b_c.place(x=126, y=416,width=80, height=40)
@@ -133,7 +155,7 @@ def create_type():
     secondquestion_type.place(x=21, y=565,width=203, height=50)
     category_menu_b.config(command=clear2sum_type)
 
-# 選"種類"後原來的按鈕不要
+# 選"種類"後原來的按鈕不要+上移
 def clear1_type():
     firstquestion.destroy()
     price_b.destroy()
@@ -291,7 +313,7 @@ def create_country():
     secondquestion_country.place(x=21, y=565,width=230, height=50)
     country_menu_b.config(command=clr2crt2_country)
     
-# 選"國家"後原來的按鈕不要
+# 選"國家"後原來的按鈕不要+上移
 def clear1_country():
     firstquestion.destroy()
     price_b.destroy()
@@ -303,13 +325,163 @@ def clear1_country():
     create_country()
     moveup()
 
+'''地區函數區'''
+# 按下"確定"，現有對話框全部消失，跳到最後對話框
+def confirm_region():
+    clear2_forall()
+    region_l1.destroy()
+    region_l2.destroy()
+    region_l3.destroy()
+    region_b1.destroy()
+    region_b2.destroy()
+    region_b3.destroy()
+    region_confirm.destroy()
+    region_chose.destroy()
+    secondquestion_region.destroy()
+    lastmove()
+
+# 按下某地區按鈕後，原按鈕消失，變標籤，傳入keyword
+def clear2_regionb1():
+    region_b1.destroy()
+    region_l1.place(x=123, y=632,width=82, height=40)
+    keyword.append('溫州街')
+def clear2_regionb2():
+    region_b2.destroy()
+    region_l2.place(x=212, y=632,width=82, height=40)
+    keyword.append('後門')
+def clear2_regionb3():
+    region_b3.destroy()
+    region_l3.place(x=303, y=632,width=82, height=40)
+    keyword.append('公館')
+
+# 選"地區"後新增的對話框
+def create_region():
+    region_chose.place(x=306, y=523,width=80, height=40)
+    region_b1.place(x=123, y=632,width=82, height=40)
+    region_b1.config(command=clear2_regionb1)
+    region_b2.place(x=212, y=632,width=82, height=40)
+    region_b2.config(command=clear2_regionb2)
+    region_b3.place(x=303, y=632,width=82, height=40)
+    region_b3.config(command=clear2_regionb3)
+    secondquestion_region.place(x=21, y=565,width=230, height=50)
+    region_confirm.place(x=50, y=640, width=60, height=30)
+    region_confirm.config(command=confirm_region)
+
+# 選"地區"後原來的按鈕不要+上移
+def clear1_region():
+    firstquestion.destroy()
+    price_b.destroy()
+    category_b.destroy()
+    value_b.destroy()
+    muti_b.destroy()      
+    country_b.destroy()
+    region_b.destroy()
+    create_region()
+    moveup()
+
+'''價錢函數區'''
+# 按下任何價錢皆會消失的對話框們
+def clear2_price():
+    clear2_forall()
+    price_chose.destroy()
+    secondquestion_price.destroy()
+    price_b1.destroy()
+    price_b2.destroy()
+    price_b3.destroy()
+    price_b4.destroy()
+    price_b5.destroy()
+    price_b6.destroy()
+    price_b7.destroy()
+    price_b8.destroy()
+
+# 按下某價錢按鈕後，介面跳到最後，這是單選；傳入keyword
+def clear2_priceb1():
+    clear2_price()
+    upperbound.append('100')
+    lastmove()
+def clear2_priceb2():
+    clear2_price()
+    upperbound.append('200')
+    lastmove()
+def clear2_priceb3():
+    clear2_price()
+    upperbound.append('300')
+    lastmove()
+def clear2_priceb4():
+    clear2_price()
+    upperbound.append('400')
+    lastmove()
+def clear2_priceb5():
+    clear2_price()
+    upperbound.append('500')
+    lastmove()
+def clear2_priceb6():
+    clear2_price()
+    upperbound.append('600')
+    lastmove()
+def clear2_priceb7():
+    clear2_price()
+    upperbound.append('700')
+    lastmove()
+def clear2_priceb8():
+    clear2_price()
+    upperbound.append('1000')
+    lastmove()
+
+# 按下"價錢"後，原對話上移，但其實是重新建造新對話框
+def moveup_price():
+    firstquestion_c.place(x=30, y=267,width=198, height=50)
+    price_b_c.place(x=126, y=324,width=80, height=40)
+    category_b_c.place(x=216, y=324,width=80, height=40)
+    value_b_c.place(x=306, y=324,width=80, height=40)     
+    muti_b_c.place(x=306, y=377,width=80, height=40)
+    country_b_c.place(x=216, y=377,width=80, height=40)
+    region_b_c.place(x=126, y=377,width=80, height=40)
+
+# 選"價錢"後新增的對話框
+def create_price():
+    price_chose.place(x=306, y=430,width=80, height=40)
+    price_b1.place(x=126, y=529,width=82, height=40)
+    price_b1.config(command=clear2_priceb1)
+    price_b2.place(x=216, y=529,width=82, height=40)
+    price_b2.config(command=clear2_priceb2)
+    price_b3.place(x=306, y=529,width=82, height=40)
+    price_b3.config(command=clear2_priceb3)
+    price_b4.place(x=126, y=582,width=82, height=40)
+    price_b4.config(command=clear2_priceb4)
+    price_b5.place(x=216, y=582,width=82, height=40)
+    price_b5.config(command=clear2_priceb5)
+    price_b6.place(x=306, y=582,width=82, height=40)
+    price_b6.config(command=clear2_priceb6)
+    price_b7.place(x=216, y=632,width=82, height=40)
+    price_b7.config(command=clear2_priceb7)
+    price_b8.place(x=306, y=632,width=82, height=40)
+    price_b8.config(command=clear2_priceb8)
+    secondquestion_price.place(x=21, y=466,width=230, height=50)
+
+# 選"地區"後原來的按鈕不要
+def clear1_price():
+    firstquestion.destroy()
+    price_b.destroy()
+    category_b.destroy()
+    value_b.destroy()
+    muti_b.destroy()      
+    country_b.destroy()
+    region_b.destroy()
+    create_price()
+    moveup_price()
+
+
+
+
 # 選擇"種類"後要執行的函數
 category_b.config(command=clear1_type)
 # 選擇"國家"後要執行的函數
 country_b.config(command=clear1_country)
-
-
-
+# 選擇"地區"後要執行的函數
+region_b.config(command=clear1_region)
+# 選擇"價錢"後要執行的函數
+price_b.config(command=clear1_price)
 
 
 
