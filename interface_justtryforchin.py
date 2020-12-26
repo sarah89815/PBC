@@ -58,9 +58,10 @@ btn_c.config(image=image1)
 cd /Users/tienying/Desktop/介面圖壓縮
 
 
+
+
 # In[2]:
-
-
+# 引入套件
 # 引入套件
 import tkinter as tk
 from PIL import ImageTk, Image
@@ -81,10 +82,7 @@ mapscreenLabel.place()
 window.mainloop()
 
 
-# In[12]:
-
-
-#第一個
+#第一個對話框
 window = tk.Tk()
 window.title('對話')
 
@@ -107,92 +105,78 @@ banner.place(x=0, y=0,width=414, height=74)    # Label內容content區域放置�
 # 放置lable的方法有：1）l.pack(); 2)l.place();
 
 
-# 第4步，在圖形介面上設定標籤
-var = tk.StringVar()    # 將label標籤的內容設定為字元型別，用var來接收hit_me函式的傳出內容用以顯示在標籤上
-l = tk.Label(window, textvariable=var, bg='orangered', fg='white', font=('Arial', 12), width=30, height=2)
-# 說明： bg為背景，fg為字型顏色，font為字型，width為長，height為高，這裡的長和高是字元的長和高，比如height=2,就是標籤有2個字元這麼高
-l.place(x=0, y=100)
-
 # 定義一個函式功能（內容自己自由編寫），供點選Button按鍵時呼叫，呼叫命令引數command=函式名
-on_hit = False
-def hit_me():
-    global on_hit
-    if on_hit == False:
-        on_hit = True
-        var.set('you hit me')
-    else:
-        on_hit = False
-        var.set('')
+
 firstquestion = tk.Label(window, text='你今天想吃什麼呢？', bg='lightgrey' ,font=('Helvetica Neue','19'), fg = 'black')
 firstquestion.place(x=30, y=550,width=198, height=50)
 
 # 第5步，在視窗介面設定放置Button按鍵
-price_b = tk.Button(window,bg='orangered',text='價錢', font=('Helvetica Neue', 18), command=hit_me) 
+price_b = tk.Button(window,bg='orangered',text='價錢', font=('Helvetica Neue', 18)) 
 price_b.config(bg="orangered")
 price_b.place(x=126, y=622,width=80, height=40)
-category_b = tk.Button(window,bg='orangered',text='種類', font=('Helvetica Neue', 18), command=hit_me)
+category_b = tk.Button(window,bg='orangered',text='種類', font=('Helvetica Neue', 18))
 category_b.place(x=216, y=622,width=80, height=40)
 category_b.config(bg="orangered")
-value_b = tk.Button(window,bg='orangered',text='評價', font=('Helvetica Neue', 18), command=hit_me)
+value_b = tk.Button(window,bg='orangered',text='評價', font=('Helvetica Neue', 18))
 value_b.place(x=306, y=622,width=80, height=40)
 value_b.config(bg="orangered")
-muti_b = tk.Button(window,bg='orangered',text='複選', font=('Helvetica Neue', 18), command=hit_me)      
+muti_b = tk.Button(window,bg='orangered',text='複選', font=('Helvetica Neue', 18))      
 muti_b.place(x=306, y=674,width=80, height=40)
 muti_b.config(bg="orangered")
-country_b = tk.Button(window,bg='orangered',text='國家', font=('Helvetica Neue', 18), command=hit_me)
+country_b = tk.Button(window,bg='orangered',text='國家', font=('Helvetica Neue', 18))
 country_b.place(x=216, y=674,width=80, height=40)
 country_b.config(bg="orangered")
-region_b = tk.Button(window,bg='orangered',text='地區', font=('Helvetica Neue', 18), command=hit_me)
+region_b = tk.Button(window,bg='orangered',text='地區', font=('Helvetica Neue', 18))
 region_b.place(x=126, y=674,width=80, height=40)
 region_b.config(bg="orangered")
 
-
+# 清除掉對話框的頁面
+def clear2():
+    firstquestion.destroy()
+    price_b.destroy()
+    category_b.destroy()
+    value_b.destroy()
+    muti_b.destroy()      
+    country_b.destroy()
+    region_b.destroy()
+    category_chose.destroy()
+    category_menu_b.destroy()
+    creat_category__menu()
+def creat_category__menu():
+    
+    
 def create_category():
-#上移動往上位移
-	firstquestion = tk.Label(window, text='你今天想吃什麼呢？', bg='lightgrey' ,font=('Helvetica Neue','19'), fg = 'black')
-	firstquestion.place(x=30, y=550,width=400, height=30)
+    category_chose = tk.Label(window, text='種類', bg='orangered' ,font=('Helvetica Neue','19'), fg = 'white')
+    category_chose.place(x=306, y=562,width=80, height=40)
+    category_menu_b= tk.Button(window,bg='orangered',text='種類選單', font=('Helvetica Neue', 18), command=hit_me)
+    category_b.place(x=216, y=672,width=80, height=40)
+    category_menu_b.config(command=clear2)
 
-	# 第5步，在視窗介面設定放置Button按鍵
-	price_b = tk.Button(window,bg='orangered',text='價錢', font=('Helvetica Neue', 18), command=hit_me) 
-	price_b.config(bg="orangered")
-	price_b.place(x=126, y=455,width=80, height=40)
-	category_b = tk.Button(window,bg='orangered',text='種類', font=('Helvetica Neue', 18), command=hit_me)
-	category_b.place(x=216, y=455,width=80, height=40)
-	category_b.config(bg="orangered")
-	value_b = tk.Button(window,bg='orangered',text='評價', font=('Helvetica Neue', 18), command=hit_me)
-	value_b.place(x=306, y=455,width=80, height=40)
-	value_b.config(bg="orangered")
-	muti_b = tk.Button(window,bg='orangered',text='複選', font=('Helvetica Neue', 18), command=hit_me)      
-	muti_b.place(x=306, y=509,width=80, height=40)
-	muti_b.config(bg="orangered")
-	country_b = tk.Button(window,bg='orangered',text='國家', font=('Helvetica Neue', 18), command=hit_me)
-	country_b.place(x=216, y=509,width=80, height=40)
-	country_b.config(bg="orangered")
-	region_b = tk.Button(window,bg='orangered',text='地區', font=('Helvetica Neue', 18), command=hit_me)
-	region_b.place(x=126, y=509,width=80, height=40)
-	region_b.config(bg="orangered")
+# 開始用按鈕
+def clear1():
+    #上移動往上位移
+    firstquestion = tk.Label(window, text='你今天想吃什麼呢？', bg='lightgrey' ,font=('Helvetica Neue','19'), fg = 'black')
+    firstquestion.place(x=30, y=550,width=400, height=30)
 
-	category_chose = tk.Label(window, text='種類', bg='orangered' ,font=('Helvetica Neue','19'), fg = 'white')
-	category_chose.place(x=306, y=562,width=80, height=40)
+    # 第5步，在視窗介面設定放置Button按鍵
+    price_b = tk.Button(window,bg='orangered',text='價錢', font=('Helvetica Neue', 18)) 
+    price_b.config(bg="orangered")
+    price_b.place(x=126, y=455,width=80, height=40)
+    category_b = tk.Button(window,bg='orangered',text='種類', font=('Helvetica Neue', 18))
+    category_b.place(x=216, y=455,width=80, height=40)
+    category_b.config(bg="orangered")
+    value_b = tk.Button(window,bg='orangered',text='評價', font=('Helvetica Neue', 18))
+    value_b.place(x=306, y=455,width=80, height=40)
+    value_b.config(bg="orangered")
+    muti_b = tk.Button(window,bg='orangered',text='複選', font=('Helvetica Neue', 18))      
+    muti_b.place(x=306, y=509,width=80, height=40)
+    muti_b.config(bg="orangered")
+    country_b = tk.Button(window,bg='orangered',text='國家', font=('Helvetica Neue', 18))
+    country_b.place(x=216, y=509,width=80, height=40)
+    country_b.config(bg="orangered")
+    region_b = tk.Button(window,bg='orangered',text='地區', font=('Helvetica Neue', 18))
+    region_b.place(x=126, y=509,width=80, height=40)
+    region_b.config(bg="orangered")
+    create_category()
 
-	category_menu_b= tk.Button(window,bg='orangered',text='種類選單', font=('Helvetica Neue', 18), command=hit_me)
-	category_b.place(x=216, y=672,width=80, height=40)
-
-window.mainloop()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-window.mainloop()
+category_b.config(command=clear1)
