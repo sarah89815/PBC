@@ -54,17 +54,16 @@ muti_b_c = tk.Label(window, text='複選', font=('Helvetica Neue', 15), bg='#ED9
 value_b_c = tk.Label(window, text='評價', font=('Helvetica Neue', 15), bg='#ED9A47', fg='white')
 country_b_c = tk.Label(window, text='國家', font=('Helvetica Neue', 15), bg='#ED9A47', fg='white')
 region_b_c = tk.Label(window, text='地區', font=('Helvetica Neue', 15), bg='#ED9A47', fg='white')
+# type線的部分
 secondquestion_type = tk.Label(window, text='你會想要甚麼種類呢？', bg='lightgrey' ,font=('Helvetica Neue','15'), fg = 'black')
 category_chose = tk.Label(window, text='種類', bg='lightgrey' ,font=('Helvetica Neue','15'), fg='black')
 category_menu_b= tk.Button(window, bg='orangered', fg="white", text='種類選單', font=('Helvetica Neue', 18))
+# country線的部分
+secondquestion_country = tk.Label(window, text='你會想要哪國的料理呢？', bg='lightgrey' ,font=('Helvetica Neue','15'), fg = 'black')
+country_chose = tk.Label(window, text='國家', bg='lightgrey' ,font=('Helvetica Neue','15'), fg='black')
+country_menu_b= tk.Button(window, bg='orangered', fg="white", text='異國料理種類選單', font=('Helvetica Neue', 18))
 
-# 按下"種類選單"後消除之前介面上新增的對話
-def clear2_type():
-    secondquestion_type.destroy()
-    category_chose.destroy()
-    category_menu_b.destroy()
-
-# 按下"種類選單"後消除之前介面上原始的對話框
+# 消除之前介面上「原始的」對話框，適用所有線!(因為最原始的對話大家都一樣)
 def clear2_forall():
     firstquestion_c.destroy()
     price_b_c.destroy()
@@ -74,7 +73,13 @@ def clear2_forall():
     country_b_c.destroy()
     region_b_c.destroy()
 
-# 按下"種類選單"後消除介面上所有對話框
+# 按下"種類選單"後消除之前介面上「新增的」對話
+def clear2_type():
+    secondquestion_type.destroy()
+    category_chose.destroy()
+    category_menu_b.destroy()
+
+# 按下"種類選單"後消除介面上「所有的」對話框
 def clear2sum_type():
     clear2_type()
     clear2_forall()
@@ -86,14 +91,7 @@ def create_type():
     secondquestion_type.place(x=21, y=565,width=203, height=50)
     category_menu_b.config(command=clear2sum_type)
 
-#選"種類"後新增的對話框
-def create_country():
-    category_chose.place(x=306, y=523,width=80, height=40)
-    category_menu_b.place(x=214, y=632,width=175, height=40)
-    secondquestion_type.place(x=21, y=565,width=203, height=50)
-    category_menu_b.config(command=clear2sum_type)
-    
-# 不管哪條線都相同的函數(原對話上移，但其實是重新建造新對話框)
+# 不管哪條線都相同的函數!(原對話上移，但其實是重新建造新對話框)
 def moveup():
     firstquestion_c.place(x=30, y=359,width=198, height=50)
     price_b_c.place(x=126, y=416,width=80, height=40)
@@ -115,6 +113,24 @@ def clear1_type():
     create_type()
     moveup()
 
+# 按下"國家選單"後消除之前介面上「新增的」對話
+def clear2_country():
+    secondquestion_country.destroy()
+    country_chose.destroy()
+    country_menu_b.destroy()
+
+# 按下"國家選單"後消除介面上「所有的」對話框
+def clear2sum_country():
+    clear2_country()
+    clear2_forall()
+
+#選"國家"後新增的對話框
+def create_country():
+    country_chose.place(x=306, y=523,width=80, height=40)
+    country_menu_b.place(x=121, y=632,width=260, height=40)
+    secondquestion_country.place(x=21, y=565,width=230, height=50)
+    country_menu_b.config(command=clear2sum_country)
+    
 # 選"國家"後原來的按鈕不要
 def clear1_country():
     firstquestion.destroy()
