@@ -80,7 +80,14 @@ def clear2sum_type():
     clear2_forall()
 
 #選"種類"後新增的對話框
-def create_category_type():
+def create_type():
+    category_chose.place(x=306, y=523,width=80, height=40)
+    category_menu_b.place(x=214, y=632,width=175, height=40)
+    secondquestion_type.place(x=21, y=565,width=203, height=50)
+    category_menu_b.config(command=clear2sum_type)
+
+#選"種類"後新增的對話框
+def create_country():
     category_chose.place(x=306, y=523,width=80, height=40)
     category_menu_b.place(x=214, y=632,width=175, height=40)
     secondquestion_type.place(x=21, y=565,width=203, height=50)
@@ -105,15 +112,25 @@ def clear1_type():
     muti_b.destroy()      
     country_b.destroy()
     region_b.destroy()
-    create_category_type()
+    create_type()
     moveup()
+
 # 選"國家"後原來的按鈕不要
-# def clear1_
+def clear1_country():
+    firstquestion.destroy()
+    price_b.destroy()
+    category_b.destroy()
+    value_b.destroy()
+    muti_b.destroy()      
+    country_b.destroy()
+    region_b.destroy()
+    create_country()
+    moveup()
 
 # 選擇"種類"後要執行的函數
 category_b.config(command=clear1_type)
 # 選擇"國家"後要執行的函數
-# country_b.config(command=clear1_coun)
+country_b.config(command=clear1_country)
 
 
 
