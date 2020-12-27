@@ -5,9 +5,10 @@ from PIL import ImageTk,Image
 from tkinter import CENTER, NW, TOP
 import tkinter as tk
 
-# 建keyword清單
+# 建立傳入演算法的清單
 keyword = list()
 upperbound = list()
+lowerbound = list()
 
 # 建立視窗
 window = tk.Tk()
@@ -64,6 +65,38 @@ finish = tk.Label(window, text='我幫你找到符合條件的餐廳了！\n \n�
 secondquestion_type = tk.Label(window, text='你會想要甚麼種類呢？', bg='lightgrey',font=('Helvetica Neue',15), fg = 'black')
 category_chose = tk.Label(window, text='種類', bg='lightgrey' ,font=('Helvetica Neue', 15), fg='black')
 category_menu_b= tk.Button(window, bg='orangered', fg="white", text='種類選單', font=('Helvetica Neue', 18))
+type_label = tk.Label(window, text='種類', bg='white', font=('Helvetica Neue',19), fg='grey')
+multichoice_label = tk.Label(window, text='可複選', bg='white', font=('Helvetica Neue',10), fg='lightgrey')
+type_b1 = tk.Button(window, text='義大利麵', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b2 = tk.Button(window, text='咖哩飯', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b3 = tk.Button(window, text='早午飯', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b4 = tk.Button(window, text='河粉', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b5 = tk.Button(window, text='飯類', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b6 = tk.Button(window, text='麵類', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b7 = tk.Button(window, text='火鍋', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b8 = tk.Button(window, text='水餃', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b9 = tk.Button(window, text='披薩', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b10 = tk.Button(window, text='燉飯', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b11 = tk.Button(window, text='排餐', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b12 = tk.Button(window, text='早餐', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b13 = tk.Button(window, text='素食', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b14 = tk.Button(window, text='漢堡', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b15 = tk.Button(window, text='沙拉', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b16 = tk.Button(window, text='飯糰', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b17 = tk.Button(window, text='炸物', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b18 = tk.Button(window, text='粥', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b19 = tk.Button(window, text='吐司麵包', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b20 = tk.Button(window, text='烤肉', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b21 = tk.Button(window, text='便當', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b22 = tk.Button(window, text='蛋包飯', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b23 = tk.Button(window, text='關東煮', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b24 = tk.Button(window, text='滷味', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b25 = tk.Button(window, text='壽喜燒', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b26 = tk.Button(window, text='咖啡廳', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b27 = tk.Button(window, text='甜點', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b28 = tk.Button(window, text='冰品', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b29 = tk.Button(window, text='鹹食', bg='lightgrey', fg='black', font=('Helvetica Neue', 13))
+type_b30 = tk.Button(window, text='確定', bg='orangered', fg='white', font=('Helvetica Neue', 13))
 # country線的部分
 secondquestion_country = tk.Label(window, text='你會想要哪國的料理呢？', bg='lightgrey' ,font=('Helvetica Neue',15), fg = 'black')
 country_chose = tk.Label(window, text='國家', bg='lightgrey',font=('Helvetica Neue', 15), fg='black')
@@ -92,6 +125,7 @@ country_b19 = tk.Button(window, text='確定', bg='orangered', fg='white', font=
 # region線的部分
 secondquestion_region = tk.Label(window, text='你會想要在那裡吃呢？', bg='lightgrey' ,font=('Helvetica Neue',15), fg = 'black')
 region_chose = tk.Label(window, text='地區', bg='lightgrey',font=('Helvetica Neue', 15), fg='black')
+multichoice_label = tk.Label(window, text='可複選', bg='white', font=('Helvetica Neue',10), fg='lightgrey')
 region_b1 = tk.Button(window, bg='lightgrey', fg="black", text='溫州街', font=('Helvetica Neue', 15))
 region_b2 = tk.Button(window, bg='lightgrey', fg="black", text='後門', font=('Helvetica Neue', 15))
 region_b3 = tk.Button(window, bg='lightgrey', fg="black", text='公館', font=('Helvetica Neue', 15))
@@ -110,6 +144,15 @@ price_b5 = tk.Button(window, bg='lightgrey', fg="black", text='< $500', font=('H
 price_b6 = tk.Button(window, bg='lightgrey', fg="black", text='< $600', font=('Helvetica Neue', 15))
 price_b7 = tk.Button(window, bg='lightgrey', fg="black", text='< $700', font=('Helvetica Neue', 15))
 price_b8 = tk.Button(window, bg='lightgrey', fg="black", text='> $700', font=('Helvetica Neue', 15))
+# value線的部分
+secondquestion_value = tk.Label(window, text='你對評價的要求是甚麼？', bg='lightgrey' ,font=('Helvetica Neue',15), fg = 'black')
+value_chose = tk.Label(window, text='評價', bg='lightgrey',font=('Helvetica Neue', 15), fg='black')
+value_b1 = tk.Button(window, bg='lightgrey', fg="black", text='>= 1星', font=('Helvetica Neue', 15))
+value_b2 = tk.Button(window, bg='lightgrey', fg="black", text='>= 2星', font=('Helvetica Neue', 15))
+value_b3 = tk.Button(window, bg='lightgrey', fg="black", text='>= 3星', font=('Helvetica Neue', 15))
+value_b4 = tk.Button(window, bg='lightgrey', fg="black", text='>= 4星', font=('Helvetica Neue', 15))
+value_b5 = tk.Button(window, bg='lightgrey', fg="black", text='>= 5星', font=('Helvetica Neue', 15))
+
 
 '''六條線都需要的函數'''
 # 消除之前介面上「原始的」對話框，適用所有線!(因為最原始的對話大家都一樣)
@@ -137,23 +180,216 @@ def lastmove():
     finish.place(x=35, y=330,width=345, height=91)
 
 '''種類函數區'''
+# 按了某種類之後，變顏色，傳出keyword給演算法(不變成標籤，太麻煩；不給重複按，太麻煩)
+def userchoice_typeb1():
+    type_b1.config(bg='orangered', fg='white')
+    keyword.append('義大利麵')
+def userchoice_typeb2():
+    type_b2.config(bg='orangered', fg='white')
+    keyword.append('咖哩飯')
+def userchoice_typeb3():
+    type_b3.config(bg='orangered', fg='white')
+    keyword.append('早午餐')
+def userchoice_typeb4():
+    type_b4.config(bg='orangered', fg='white')
+    keyword.append('河粉')
+def userchoice_typeb5():
+    type_b5.config(bg='orangered', fg='white')
+    keyword.append('飯類')
+def userchoice_typeb6():
+    type_b6.config(bg='orangered', fg='white')
+    keyword.append('麵類')
+def userchoice_typeb7():
+    type_b7.config(bg='orangered', fg='white')
+    keyword.append('火鍋')
+def userchoice_typeb8():
+    type_b8.config(bg='orangered', fg='white')
+    keyword.append('水餃')
+def userchoice_typeb9():
+    type_b9.config(bg='orangered', fg='white')
+    keyword.append('披薩')
+def userchoice_typeb10():
+    type_b10.config(bg='orangered', fg='white')
+    keyword.append('燉飯')
+def userchoice_typeb11():
+    type_b11.config(bg='orangered', fg='white')
+    keyword.append('排餐')
+def userchoice_typeb12():
+    type_b12.config(bg='orangered', fg='white')
+    keyword.append('早餐')
+def userchoice_typeb13():
+    type_b13.config(bg='orangered', fg='white')
+    keyword.append('素食')
+def userchoice_typeb14():
+    type_b14.config(bg='orangered', fg='white')
+    keyword.append('漢堡')
+def userchoice_typeb15():
+    type_b15.config(bg='orangered', fg='white')
+    keyword.append('沙拉')
+def userchoice_typeb16():
+    type_b16.config(bg='orangered', fg='white')
+    keyword.append('飯糰')
+def userchoice_typeb17():
+    type_b17.config(bg='orangered', fg='white')
+    keyword.append('炸物')
+def userchoice_typeb18():
+    type_b18.config(bg='orangered', fg='white')
+    keyword.append('粥')
+def userchoice_typeb19():
+    type_b19.config(bg='orangered', fg='white')
+    keyword.append('吐司麵包')
+def userchoice_typeb20():
+    type_b20.config(bg='orangered', fg='white')
+    keyword.append('烤肉')
+def userchoice_typeb21():
+    type_b21.config(bg='orangered', fg='white')
+    keyword.append('便當')
+def userchoice_typeb22():
+    type_b22.config(bg='orangered', fg='white')
+    keyword.append('蛋包飯')
+def userchoice_typeb23():
+    type_b23.config(bg='orangered', fg='white')
+    keyword.append('關東煮')
+def userchoice_typeb24():
+    type_b24.config(bg='orangered', fg='white')
+    keyword.append('滷味')
+def userchoice_typeb25():
+    type_b25.config(bg='orangered', fg='white')
+    keyword.append('壽喜燒')
+def userchoice_typeb26():
+    type_b26.config(bg='orangered', fg='white')
+    keyword.append('咖啡廳')
+def userchoice_typeb27():
+    type_b27.config(bg='orangered', fg='white')
+    keyword.append('甜點')
+def userchoice_typeb28():
+    type_b28.config(bg='orangered', fg='white')
+    keyword.append('冰品')
+def userchoice_typeb29():
+    type_b29.config(bg='orangered', fg='white')
+    keyword.append('鹹食')
+
+# 按下"確定"後把當前所有按鈕標籤清理掉+跳到最後畫面
+def confirm_type():
+    type_label.destroy()
+    multichoice_label.destroy()
+    type_b1.destroy()
+    type_b2.destroy()
+    type_b3.destroy()
+    type_b4.destroy()
+    type_b5.destroy()
+    type_b6.destroy()
+    type_b7.destroy()
+    type_b8.destroy()
+    type_b9.destroy()
+    type_b10.destroy()
+    type_b11.destroy()
+    type_b12.destroy()
+    type_b13.destroy()
+    type_b14.destroy()
+    type_b15.destroy()
+    type_b16.destroy()
+    type_b17.destroy()
+    type_b18.destroy()
+    type_b19.destroy()
+    type_b20.destroy()
+    type_b21.destroy()
+    type_b22.destroy()
+    type_b23.destroy()
+    type_b24.destroy()
+    type_b25.destroy()
+    type_b26.destroy()
+    type_b27.destroy()
+    type_b28.destroy()
+    type_b29.destroy()
+    type_b30.destroy()
+    lastmove()
+
+# 按下"種類選單"後要新增的按鈕們
+def create2_type():
+    type_label.place(x=38, y=102,width=46, height=40)
+    multichoice_label.place(x=38, y=145,width=39, height=17)
+    type_b1.place(x=34, y=172,width=91, height=37)
+    type_b1.config(command=userchoice_typeb1)
+    type_b2.place(x=160, y=172,width=91, height=37)
+    type_b2.config(command=userchoice_typeb2)
+    type_b3.place(x=283, y=172,width=91, height=37)
+    type_b3.config(command=userchoice_typeb3)
+    type_b4.place(x=34, y=219,width=91, height=37)
+    type_b4.config(command=userchoice_typeb4)
+    type_b5.place(x=160, y=219,width=91, height=37)
+    type_b5.config(command=userchoice_typeb5)
+    type_b6.place(x=283, y=219,width=91, height=37)
+    type_b6.config(command=userchoice_typeb6)
+    type_b7.place(x=34, y=265,width=91, height=37)
+    type_b7.config(command=userchoice_typeb7)
+    type_b8.place(x=160, y=265,width=91, height=37)
+    type_b8.config(command=userchoice_typeb8)
+    type_b9.place(x=283, y=265,width=91, height=37)
+    type_b9.config(command=userchoice_typeb9)
+    type_b10.place(x=34, y=312,width=91, height=37)
+    type_b10.config(command=userchoice_typeb10)
+    type_b11.place(x=160, y=312,width=91, height=37)
+    type_b11.config(command=userchoice_typeb11)
+    type_b12.place(x=283, y=312,width=91, height=37)
+    type_b12.config(command=userchoice_typeb12)
+    type_b13.place(x=34, y=358, width=91, height=37)
+    type_b13.config(command=userchoice_typeb13)
+    type_b14.place(x=160, y=358, width=91, height=37)
+    type_b14.config(command=userchoice_typeb14)
+    type_b15.place(x=283, y=358, width=91, height=37)
+    type_b15.config(command=userchoice_typeb15)
+    type_b16.place(x=34, y=405, width=91, height=37)
+    type_b16.config(command=userchoice_typeb16)
+    type_b17.place(x=160, y=405, width=91, height=37)
+    type_b17.config(command=userchoice_typeb17)
+    type_b18.place(x=283, y=405, width=91, height=37)
+    type_b18.config(command=userchoice_typeb18)
+    type_b19.place(x=34, y=451, width=91, height=37)
+    type_b19.config(command=userchoice_typeb19)
+    type_b20.place(x=160, y=451, width=91, height=37)
+    type_b20.config(command=userchoice_typeb20)
+    type_b21.place(x=283, y=451, width=91, height=37)
+    type_b21.config(command=userchoice_typeb21)
+    type_b22.place(x=34, y=498,width=91, height=37)
+    type_b22.config(command=userchoice_typeb22)
+    type_b23.place(x=160, y=498,width=91, height=37)
+    type_b23.config(command=userchoice_typeb23)
+    type_b24.place(x=283, y=498,width=91, height=37)
+    type_b24.config(command=userchoice_typeb24)
+    type_b25.place(x=34, y=544,width=91, height=37)
+    type_b25.config(command=userchoice_typeb25)
+    type_b26.place(x=160, y=544,width=91, height=37)
+    type_b26.config(command=userchoice_typeb26)
+    type_b27.place(x=283, y=544,width=91, height=37)
+    type_b27.config(command=userchoice_typeb27)
+    type_b28.place(x=34, y=591,width=91, height=37)
+    type_b28.config(command=userchoice_typeb278
+    type_b29.place(x=160, y=591, width=91, height=37)
+    type_b29.config(command=userchoice_typeb29)
+    type_b30.place(x=156, y=638,width=102, height=49)
+    type_b30.config(command=confirm_type)
+
 # 按下"種類選單"後消除之前介面上「新增的」對話
 def clear2_type():
     secondquestion_type.destroy()
     category_chose.destroy()
     category_menu_b.destroy()
 
-# 按下"種類選單"後消除介面上「所有的」對話框
-def clear2sum_type():
+'''按下"種類選單"後
+a.消除介面上「所有的」對話框
+b.要新增的對話框(很多)'''
+def clr2crt2_type():
     clear2_type()
     clear2_forall()
+    create2_type()
 
 #選"種類"後新增的對話框
 def create_type():
     category_chose.place(x=306, y=523,width=80, height=40)
     category_menu_b.place(x=214, y=632,width=175, height=40)
     secondquestion_type.place(x=21, y=565,width=203, height=50)
-    category_menu_b.config(command=clear2sum_type)
+    category_menu_b.config(command=clr2crt2_type)
 
 # 選"種類"後原來的按鈕不要+上移
 def clear1_type():
@@ -338,6 +574,7 @@ def confirm_region():
     region_confirm.destroy()
     region_chose.destroy()
     secondquestion_region.destroy()
+    multichoice_label.destroy()
     lastmove()
 
 # 按下某地區按鈕後，原按鈕消失，變標籤，傳入keyword
@@ -364,7 +601,8 @@ def create_region():
     region_b3.place(x=303, y=632,width=82, height=40)
     region_b3.config(command=clear2_regionb3)
     secondquestion_region.place(x=21, y=565,width=230, height=50)
-    region_confirm.place(x=50, y=640, width=60, height=30)
+    multichoice_label.place(x=265, y=595,width=39, height=17)
+    region_confirm.place(x=50, y=642, width=60, height=30)
     region_confirm.config(command=confirm_region)
 
 # 選"地區"後原來的按鈕不要+上移
@@ -471,6 +709,77 @@ def clear1_price():
     create_price()
     moveup_price()
 
+'''評價函數區'''
+# 按下任何評價皆會消失的對話框們
+def clear2_value():
+    clear2_forall()
+    value_chose.destroy()
+    secondquestion_value.destroy()
+    value_b1.destroy()
+    value_b2.destroy()
+    value_b3.destroy()
+    value_b4.destroy()
+    value_b5.destroy()
+
+# 按下某價錢按鈕後，介面跳到最後，這是單選；傳入keyword
+def clear2_valueb1():
+    clear2_value()
+    lowerbound.append('1')
+    lastmove()
+def clear2_valueb2():
+    clear2_value()
+    lowerbound.append('2')
+    lastmove()
+def clear2_valueb3():
+    clear2_value()
+    lowerbound.append('3')
+    lastmove()
+def clear2_valueb4():
+    clear2_price()
+    lowerbound.append('4')
+    lastmove()
+def clear2_valueb5():
+    clear2_value()
+    lowerbound.append('5')
+    lastmove()
+
+# 按下"評價"後，原對話上移，但其實是重新建造新對話框
+def moveup_value():
+    firstquestion_c.place(x=30, y=324,width=198, height=50)
+    price_b_c.place(x=126, y=380,width=80, height=40)
+    category_b_c.place(x=216, y=380,width=80, height=40)
+    value_b_c.place(x=306, y=380,width=80, height=40)     
+    muti_b_c.place(x=306, y=433,width=80, height=40)
+    country_b_c.place(x=216, y=433,width=80, height=40)
+    region_b_c.place(x=126, y=433,width=80, height=40)
+
+# 選"評價"後新增的對話框
+def create_value():
+    value_chose.place(x=306, y=483,width=80, height=40)
+    value_b1.place(x=126, y=584,width=82, height=40)
+    value_b1.config(command=clear2_valueb1)
+    value_b2.place(x=216, y=584,width=82, height=40)
+    value_b2.config(command=clear2_valueb2)
+    value_b3.place(x=306, y=584,width=82, height=40)
+    value_b3.config(command=clear2_valueb3)
+    value_b4.place(x=216, y=632,width=82, height=40)
+    value_b4.config(command=clear2_valueb4)
+    value_b5.place(x=306, y=632,width=82, height=40)
+    value_b5.config(command=clear2_valueb5)
+    secondquestion_value.place(x=21, y=519,width=230, height=50)
+
+# 選"評價"後原來的按鈕不要
+def clear1_value():
+    firstquestion.destroy()
+    price_b.destroy()
+    category_b.destroy()
+    value_b.destroy()
+    muti_b.destroy()      
+    country_b.destroy()
+    region_b.destroy()
+    create_value()
+    moveup_value()
+
 
 
 
@@ -482,7 +791,8 @@ country_b.config(command=clear1_country)
 region_b.config(command=clear1_region)
 # 選擇"價錢"後要執行的函數
 price_b.config(command=clear1_price)
-
+# 選擇"評價"後要執行的函數
+value_b.config(command=clear1_value)
 
 
 
