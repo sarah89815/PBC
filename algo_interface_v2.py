@@ -1233,55 +1233,55 @@ def userchoice_region_b3():
 def userchoice_price_b1():
     price_b1.config(bg='orangered', fg='white')
     global upperbound
-    upperbound.append('100')
+    upperbound = '100'
 def userchoice_price_b2():
     price_b2.config(bg='orangered', fg='white')
     global upperbound
-    upperbound.append('200')
+    upperbound = '200'
 def userchoice_price_b3():
     price_b3.config(bg='orangered', fg='white')
     global upperbound
-    upperbound.append('300')
+    upperbound = '300'
 def userchoice_price_b4():
     price_b4.config(bg='orangered', fg='white')
     global upperbound
-    upperbound.append('400')
+    upperbound = '400'
 def userchoice_price_b5():
     price_b5.config(bg='orangered', fg='white')
     global upperbound
-    upperbound.append('500')
+    upperbound = '500'
 def userchoice_price_b6():
     price_b6.config(bg='orangered', fg='white')
     global upperbound
-    upperbound.append('600')
+    upperbound = '600'
 def userchoice_price_b7():
     price_b7.config(bg='orangered', fg='white')
     global upperbound
-    upperbound.append('700')
+    upperbound = '700'
 def userchoice_price_b8():
     price_b8.config(bg='orangered', fg='white')
     global upperbound
-    upperbound.append('1000')
+    upperbound = '1000'
 def userchoice_value_b1():
     value_b1.config(bg='orangered', fg='white')
     global lowerbound
-    lowerbound.append('1')
+    lowerbound = '1'
 def userchoice_value_b2():
     value_b2.config(bg='orangered', fg='white')
     global lowerbound
-    lowerbound.append('2')
+    lowerbound = '2'
 def userchoice_value_b3():
     value_b3.config(bg='orangered', fg='white')
     global lowerbound
-    lowerbound.append('3')
+    lowerbound = '3'
 def userchoice_value_b4():
     value_b4.config(bg='orangered', fg='white')
     global lowerbound
-    lowerbound.append('4')
+    lowerbound = '4'
 def userchoice_value_b5():
     value_b5.config(bg='orangered', fg='white')
     global lowerbound
-    lowerbound.append('5')
+    lowerbound = '5'
 
 
 
