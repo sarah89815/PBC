@@ -2,12 +2,18 @@
 # https://medium.com/用力去愛一個人的話-心也會痛的/默默地學-python-互動式圖像-fb25d462bb7
 
 import matplotlib.pyplot as plt
-from matplotlib.offsetbox import OffsetImage, AnnotationBbox
+from matplotlib.offsetbox import OffsetImage, AnnotationBbox, TextArea
 import numpy as np
 # 繪製圖片用
 import os
 import pygame
 from PIL import ImageFont, ImageDraw, Image
+import matplotlib.font_manager as fm
+
+# 解決中文字型
+fpath = '/Users/yuchiaching/Desktop/GitHub/PBC_Final/text to image/jhenghei bold.ttf'
+
+prop = fm.FontProperties(fname=fpath)
 
 
 # 畫出地圖的函式
@@ -41,29 +47,35 @@ def food_map(store_list):
     # 標示商家位置
     line, = ax.plot(x, y, ls="", marker='o', color='#fa4a0c') 
 
+    # 商家資訊清單
+    message_list = list()
 
-    # 圖片顯示相關
-    # 待修正
+    # 製作資訊框
+    for i, store in enumerate(store_list):
+        store.types = '、'.join(store.types)
 
-    arr = np.empty((len(x),10,10))
-    for i in range(len(x)):
-        f = np.random.rand(5,5)
-        arr[i, 0:5,0:5] = f
-        arr[i, 5:,0:5] =np.flipud(f)
-        arr[i, 5:,5:] =np.fliplr(np.flipud(f))
-        arr[i, 0:5:,5:] = np.fliplr(f)
-    # create the annotations box
-    # 顯示圖片部分
-    im = OffsetImage(arr[0,:,:], zoom=5)
-    xybox=(50, 50)
-    ab = AnnotationBbox(im, (x[0],y[0]), xybox=xybox, xycoords='data',
-            boxcoords="offset points",  pad=0.3,  arrowprops=dict(arrowstyle="->"))
+        message = [store.name,
+                   '[' + str(store.area) + '] ｜ ' + store.types,
+                   '★ ' + str(store.avg_ranking) + ' / 5.0 ｜ ' + 'NT＄' + str(store.lowerbound) + ' ~ NT＄' + str(store.upperbound)]
+
+        message = '\n'.join(message)
+
+        message_list.append(message)
+
+        message = TextArea(message, minimumdescent=False, textprops=dict(fontproperties=prop))
+
+        xybox = (50, 50)
+        ab = AnnotationBbox(message, (x[i],y[i]),
+                            xybox=xybox,
+                            xycoords='data',
+                            boxcoords="offset points",
+                            pad=0.3,
+                            arrowprops=dict(arrowstyle="->"))
 
     # 把他放到圖表上
-    ax.add_artist(im_s)
+        ax.add_artist(ab)
     # 轉成可顯示
-    ab.set_visible(False)
-
+        ab.set_visible(False)
 
     # CopyPaste
     # 滑鼠事件
@@ -85,7 +97,7 @@ def food_map(store_list):
             # place it at the position of the hovered scatter point
             ab.xy =(x[ind], y[ind])
             # set the image corresponding to that point
-            im.set_data(arr[ind,:,:])
+            message.set_text(message_list[ind])
         else:
             #if the mouse is not over a scatter point
             ab.set_visible(False)
@@ -95,8 +107,7 @@ def food_map(store_list):
 
     plt.show()
 
-    #
-    return str(finish)
+    return str("finish")
 
 
 # 建立商家 class
@@ -169,7 +180,9 @@ def text2image(store):
     return im
 
 # 測試資料
-store = Store('小林阿盛壽司', 121.5237202, 25.0170687, 4.0, 0, 
-               100, '溫州街', ['日式壽司', '麵類'])
+store = [Store('小林阿盛壽司', 121.5237202, 25.0170687, 4.0, 0, 
+               100, '溫州街', ['日式壽司', '麵類']),
+         Store('漁人食舖', 121.52306, 25.0194489, 4.1, 200, 
+               300, '溫州街', ['日式丼飯'])]
 
-a = text2image(store)
+food_map(store)
