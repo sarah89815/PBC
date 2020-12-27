@@ -64,8 +64,11 @@ def filter(store_list, keywords_list):
     # 刪除重複商家
     done = list(set(done))
 
-    # 回傳過濾後的商家清單
-    return done
+    if done != []:
+        # 回傳過濾後的商家清單
+        return done
+    else:
+        return store_list
 
 
 # 定義選擇價格區間
