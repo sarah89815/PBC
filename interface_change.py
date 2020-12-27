@@ -53,12 +53,12 @@ region_b.config(bg="orangered", fg="white")
 還沒"place"所以還不會出現。在後面有新寫到的都要補在這裡！'''
 firstquestion_c = tk.Label(window, text='你今天想吃什麼呢？', bg='lightgrey' ,font=('Helvetica Neue','15'), fg = 'black')
 # 為了讓使用者不再重複點種類或國家那些的，變成label
-price_b_c = tk.Label(window, text='價錢', font=('Helvetica Neue', 15), bg='#ED9A47', fg='white')
-category_b_c = tk.Label(window, text='種類', font=('Helvetica Neue', 15), bg='#ED9A47', fg='white')
-muti_b_c = tk.Label(window, text='複選', font=('Helvetica Neue', 15), bg='#ED9A47', fg='white')
-value_b_c = tk.Label(window, text='評價', font=('Helvetica Neue', 15), bg='#ED9A47', fg='white')
-country_b_c = tk.Label(window, text='國家', font=('Helvetica Neue', 15), bg='#ED9A47', fg='white')
-region_b_c = tk.Label(window, text='地區', font=('Helvetica Neue', 15), bg='#ED9A47', fg='white')
+price_b_c = tk.Label(window, text='價錢', font=('Helvetica Neue', 15), bg='#F69C7C', fg='white')
+category_b_c = tk.Label(window, text='種類', font=('Helvetica Neue', 15), bg='#F69C7C', fg='white')
+muti_b_c = tk.Label(window, text='複選', font=('Helvetica Neue', 15), bg='#F69C7C', fg='white')
+value_b_c = tk.Label(window, text='評價', font=('Helvetica Neue', 15), bg='#F69C7C', fg='white')
+country_b_c = tk.Label(window, text='國家', font=('Helvetica Neue', 15), bg='#F69C7C', fg='white')
+region_b_c = tk.Label(window, text='地區', font=('Helvetica Neue', 15), bg='#F69C7C', fg='white')
 # 最後一個對話框
 finish = tk.Label(window, text='我幫你找到符合條件的餐廳了！\n \n可以移動游標到圖釘了解餐廳資訊喔', font=('Helvetica Neue', 12), bg='lightgrey', fg='black')
 # type線的部分
@@ -367,7 +367,7 @@ def create2_type():
     type_b28.config(command=userchoice_typeb28)
     type_b29.place(x=160, y=591, width=91, height=37)
     type_b29.config(command=userchoice_typeb29)
-    type_b30.place(x=156, y=638,width=102, height=49)
+    type_b30.place(x=156, y=638,width=125, height=49)
     type_b30.config(command=confirm_type)
 
 # 按下"種類選單"後消除之前介面上「新增的」對話
