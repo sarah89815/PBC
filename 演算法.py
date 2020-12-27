@@ -44,16 +44,22 @@ def filter(store_list, keywords_list):
 
     for keyword in keywords_list:
         # 檢查每一間商家是否符合條件，符合條件的加入 done 清單
-        for store in store_list:
-            if (keyword != '飯類') and (keyword != '麵類'):
-                if keyword in store.types:
+        if keyword in ['溫州街', '公館', '後門']:
+            # 如果關鍵字是區域
+            for store in store_list:
+                if store.area == keyword:
                     done.append(store)
-            else:
-                for each in store.types:
-                    # 因為若選擇「麵類」會把有「麵包」的商家也放進來，所以要刪掉    
-                    if (keyword[0] in each) and (each != '麵包'):
+        else:
+            for store in store_list:
+                if (keyword != '飯類') and (keyword != '麵類'):
+                    if keyword in store.types:
                         done.append(store)
-                        break
+                else:
+                    for each in store.types:
+                        # 因為若選擇「麵類」會把有「麵包」的商家也放進來，所以要刪掉    
+                        if (keyword[0] in each) and (each != '麵包'):
+                            done.append(store)
+                            break
 
     # 刪除重複商家
     done = list(set(done))
