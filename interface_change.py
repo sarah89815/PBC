@@ -364,7 +364,7 @@ def create2_type():
     type_b27.place(x=283, y=544,width=91, height=37)
     type_b27.config(command=userchoice_typeb27)
     type_b28.place(x=34, y=591,width=91, height=37)
-    type_b28.config(command=userchoice_typeb278
+    type_b28.config(command=userchoice_typeb28)
     type_b29.place(x=160, y=591, width=91, height=37)
     type_b29.config(command=userchoice_typeb29)
     type_b30.place(x=156, y=638,width=102, height=49)
