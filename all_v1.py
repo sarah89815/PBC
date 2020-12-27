@@ -1521,7 +1521,7 @@ def ranking_choose(store_list, lowerbound):
 
 
 # 解決 matplotlib 中文字型問題
-fpath = '/Users/yuchiaching/Desktop/GitHub/PBC_Final/text to image/jhenghei bold.ttf'
+fpath = '/Users/yuchiaching/Desktop/GitHub/PBC_Final/jhenghei bold.ttf'
 prop = fm.FontProperties(fname=fpath)
 
 
@@ -1547,7 +1547,7 @@ def food_map(store_list):
     # 建立畫框和圖表
     fig, ax = plt.subplots(figsize=(16, 10), dpi=70)
     # 圖表顯示地圖底圖以及設定座標軸
-    ax.imshow(img, extent=[121.52209923089963, 121.55634026412044, 25.00897, 25.02854])
+    ax.imshow(img, extent=[121.5136161, 121.5480002, 25.00897, 25.02854])
     # 不顯示座標軸
     # plt.axis('off')
 
