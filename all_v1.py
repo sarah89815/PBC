@@ -77,7 +77,7 @@ go = tk.Button(window, bg='coral', fg="white", text="Let's go!", font=('Helvetic
 # type線的部分
 secondquestion_type = tk.Label(window, text='你會想要甚麼種類呢？', bg='cornsilk',font=('Helvetica Neue',15), fg = 'saddlebrown')
 category_chose = tk.Label(window, text='種類', bg='gold' ,font=('Helvetica Neue', 15), fg='white')
-category_menu_b= tk.Button(window, bg='orangered', fg="saddlebrown", text='種類選單', font=('Helvetica Neue', 18))
+category_menu_b= tk.Button(window, bg='coral', fg="saddlebrown", text='種類選單', font=('Helvetica Neue', 18))
 type_label = tk.Label(window, text='種類', bg='white', font=('Helvetica Neue',19), fg='grey')
 multichoice_label = tk.Label(window, text='可複選', bg='white', font=('Helvetica Neue',10), fg='lightgrey')
 type_b1 = tk.Button(window, text='義大利麵', bg='cornsilk', fg="saddlebrown", font=('Helvetica Neue', 13))
@@ -113,7 +113,7 @@ type_b30 = tk.Button(window, text='確定', bg='coral', fg='white', font=('Helve
 # country線的部分
 secondquestion_country = tk.Label(window, text='你會想要哪國的料理呢？', bg='cornsilk' ,font=('Helvetica Neue',15), fg = 'saddlebrown')
 country_chose = tk.Label(window, text='國家', bg='gold',font=('Helvetica Neue', 15), fg='white')
-country_menu_b= tk.Button(window, bg='orangered', fg="white", text='異國料理種類選單', font=('Helvetica Neue', 18))
+country_menu_b= tk.Button(window, bg='coral', fg="white", text='異國料理種類選單', font=('Helvetica Neue', 18))
 country_label = tk.Label(window, text='異國料理種類', bg='white', font=('Helvetica Neue',19), fg='grey')
 multichoice_label = tk.Label(window, text='可複選', bg='white', font=('Helvetica Neue',10), fg='lightgrey')
 country_b1 = tk.Button(window, text='日式壽司',bg='cornsilk', fg='saddlebrown', font=('Helvetica Neue', 13))
@@ -190,7 +190,7 @@ value_b2 = tk.Button(window, bg='cornsilk', fg="saddlebrown", text='>=2星', fon
 value_b3 = tk.Button(window, bg='cornsilk', fg="saddlebrown", text='>=3星', font=('Helvetica Neue', 15))
 value_b4 = tk.Button(window, bg='cornsilk', fg="saddlebrown", text='>=4星', font=('Helvetica Neue', 15))
 value_b5 = tk.Button(window, bg='cornsilk', fg="saddlebrown", text='>=5星', font=('Helvetica Neue', 15))
-confirm_b = tk.Button(window, text='確定', bg='orangered', fg='white', font=('Helvetica Neue', 13))
+confirm_b = tk.Button(window, text='確定', bg='coral', fg='white', font=('Helvetica Neue', 13))
 #multi中的種類線（要更新的地方）
 type_label_1 = tk.Label(window, text='種類', bg='white', font=('Helvetica Neue',19), fg='grey')
 multichoice_label_1 = tk.Label(window, text='可複選', bg='white', font=('Helvetica Neue',10), fg='lightgrey')
@@ -235,91 +235,91 @@ def lastmove():
 '''種類函數區'''
 # 按了某種類之後，變顏色，傳出keyword給演算法(不變成標籤，太麻煩；不給重複按，太麻煩)
 def userchoice_typeb1():
-    type_b1.config(bg='orangered', fg='white')
+    type_b1.config(bg='coral', fg='white')
     keyword.append('義大利麵')
 def userchoice_typeb2():
-    type_b2.config(bg='orangered', fg='white')
+    type_b2.config(bg='coral', fg='white')
     keyword.append('咖哩飯')
 def userchoice_typeb3():
-    type_b3.config(bg='orangered', fg='white')
+    type_b3.config(bg='coral', fg='white')
     keyword.append('早午餐')
 def userchoice_typeb4():
-    type_b4.config(bg='orangered', fg='white')
+    type_b4.config(bg='coral', fg='white')
     keyword.append('河粉')
 def userchoice_typeb5():
-    type_b5.config(bg='orangered', fg='white')
+    type_b5.config(bg='coral', fg='white')
     keyword.append('飯類')
 def userchoice_typeb6():
-    type_b6.config(bg='orangered', fg='white')
+    type_b6.config(bg='coral', fg='white')
     keyword.append('麵類')
 def userchoice_typeb7():
-    type_b7.config(bg='orangered', fg='white')
+    type_b7.config(bg='coral', fg='white')
     keyword.append('火鍋')
 def userchoice_typeb8():
-    type_b8.config(bg='orangered', fg='white')
+    type_b8.config(bg='coral', fg='white')
     keyword.append('水餃')
 def userchoice_typeb9():
-    type_b9.config(bg='orangered', fg='white')
+    type_b9.config(bg='coral', fg='white')
     keyword.append('披薩')
 def userchoice_typeb10():
-    type_b10.config(bg='orangered', fg='white')
+    type_b10.config(bg='coral', fg='white')
     keyword.append('燉飯')
 def userchoice_typeb11():
-    type_b11.config(bg='orangered', fg='white')
+    type_b11.config(bg='coral', fg='white')
     keyword.append('排餐')
 def userchoice_typeb12():
-    type_b12.config(bg='orangered', fg='white')
+    type_b12.config(bg='coral', fg='white')
     keyword.append('早餐')
 def userchoice_typeb13():
-    type_b13.config(bg='orangered', fg='white')
+    type_b13.config(bg='coral', fg='white')
     keyword.append('素食')
 def userchoice_typeb14():
-    type_b14.config(bg='orangered', fg='white')
+    type_b14.config(bg='coral', fg='white')
     keyword.append('漢堡')
 def userchoice_typeb15():
-    type_b15.config(bg='orangered', fg='white')
+    type_b15.config(bg='coral', fg='white')
     keyword.append('沙拉')
 def userchoice_typeb16():
-    type_b16.config(bg='orangered', fg='white')
+    type_b16.config(bg='coral', fg='white')
     keyword.append('飯糰')
 def userchoice_typeb17():
-    type_b17.config(bg='orangered', fg='white')
+    type_b17.config(bg='coral', fg='white')
     keyword.append('炸物')
 def userchoice_typeb18():
-    type_b18.config(bg='orangered', fg='white')
+    type_b18.config(bg='coral', fg='white')
     keyword.append('粥')
 def userchoice_typeb19():
-    type_b19.config(bg='orangered', fg='white')
+    type_b19.config(bg='coral', fg='white')
     keyword.append('吐司麵包')
 def userchoice_typeb20():
-    type_b20.config(bg='orangered', fg='white')
+    type_b20.config(bg='coral', fg='white')
     keyword.append('烤肉')
 def userchoice_typeb21():
-    type_b21.config(bg='orangered', fg='white')
+    type_b21.config(bg='coral', fg='white')
     keyword.append('便當')
 def userchoice_typeb22():
-    type_b22.config(bg='orangered', fg='white')
+    type_b22.config(bg='coral', fg='white')
     keyword.append('蛋包飯')
 def userchoice_typeb23():
-    type_b23.config(bg='orangered', fg='white')
+    type_b23.config(bg='coral', fg='white')
     keyword.append('關東煮')
 def userchoice_typeb24():
-    type_b24.config(bg='orangered', fg='white')
+    type_b24.config(bg='coral', fg='white')
     keyword.append('滷味')
 def userchoice_typeb25():
-    type_b25.config(bg='orangered', fg='white')
+    type_b25.config(bg='coral', fg='white')
     keyword.append('壽喜燒')
 def userchoice_typeb26():
-    type_b26.config(bg='orangered', fg='white')
+    type_b26.config(bg='coral', fg='white')
     keyword.append('咖啡廳')
 def userchoice_typeb27():
-    type_b27.config(bg='orangered', fg='white')
+    type_b27.config(bg='coral', fg='white')
     keyword.append('甜點')
 def userchoice_typeb28():
-    type_b28.config(bg='orangered', fg='white')
+    type_b28.config(bg='coral', fg='white')
     keyword.append('冰品')
 def userchoice_typeb29():
-    type_b29.config(bg='orangered', fg='white')
+    type_b29.config(bg='coral', fg='white')
     keyword.append('鹹食')
 
 # 按下"確定"後把當前所有按鈕標籤清理掉+跳到最後畫面
@@ -465,58 +465,58 @@ def clear2_country():
 
 # 按了料理之後，變顏色，傳出keyword給演算法(不變成標籤，太麻煩；不給重複按，太麻煩)
 def userchoice_countryb1():
-    country_b1.config(bg='orangered', fg='white')
+    country_b1.config(bg='coral', fg='white')
     keyword.append('日式壽司')
 def userchoice_countryb2():
-    country_b2.config(bg='orangered', fg='white')
+    country_b2.config(bg='coral', fg='white')
     keyword.append('日式丼飯')
 def userchoice_countryb3():
-    country_b3.config(bg='orangered', fg='white')
+    country_b3.config(bg='coral', fg='white')
     keyword.append('日式拉麵')
 def userchoice_countryb4():
-    country_b4.config(bg='orangered', fg='white')
+    country_b4.config(bg='coral', fg='white')
     keyword.append('韓式料理')
 def userchoice_countryb5():
-    country_b5.config(bg='orangered', fg='white')
+    country_b5.config(bg='coral', fg='white')
     keyword.append('中東料理')
 def userchoice_countryb6():
-    country_b6.config(bg='orangered', fg='white')
+    country_b6.config(bg='coral', fg='white')
     keyword.append('印度料理')
 def userchoice_countryb7():
-    country_b7.config(bg='orangered', fg='white')
+    country_b7.config(bg='coral', fg='white')
     keyword.append('港式料理')
 def userchoice_countryb8():
-    country_b8.config(bg='orangered', fg='white')
+    country_b8.config(bg='coral', fg='white')
     keyword.append('越式料理')
 def userchoice_countryb9():
-    country_b9.config(bg='orangered', fg='white')
+    country_b9.config(bg='coral', fg='white')
     keyword.append('泰式料理')
 def userchoice_countryb10():
-    country_b10.config(bg='orangered', fg='white')
+    country_b10.config(bg='coral', fg='white')
     keyword.append('俄羅斯料理')
 def userchoice_countryb11():
-    country_b11.config(bg='orangered', fg='white')
+    country_b11.config(bg='coral', fg='white')
     keyword.append('地中海料理')
 def userchoice_countryb12():
-    country_b12.config(bg='orangered', fg='white')
+    country_b12.config(bg='coral', fg='white')
     keyword.append('馬來西亞料理')
 def userchoice_countryb13():
-    country_b13.config(bg='orangered', fg='white')
+    country_b13.config(bg='coral', fg='white')
     keyword.append('雲南料理')
 def userchoice_countryb14():
-    country_b14.config(bg='orangered', fg='white')
+    country_b14.config(bg='coral', fg='white')
     keyword.append('四川料理')
 def userchoice_countryb15():
-    country_b15.config(bg='orangered', fg='white')
+    country_b15.config(bg='coral', fg='white')
     keyword.append('南洋料理')
 def userchoice_countryb16():
-    country_b16.config(bg='orangered', fg='white')
+    country_b16.config(bg='coral', fg='white')
     keyword.append('以色列料理')
 def userchoice_countryb17():
-    country_b17.config(bg='orangered', fg='white')
+    country_b17.config(bg='coral', fg='white')
     keyword.append('加拿大料理')
 def userchoice_countryb18():
-    country_b18.config(bg='orangered', fg='white')
+    country_b18.config(bg='coral', fg='white')
     keyword.append('夏威夷生魚飯')
 
 # 按下"確定"後把當前所有按鈕標籤清理掉+跳到最後畫面
@@ -851,91 +851,91 @@ def clear1_value():
 
 # 按了某種類之後，變顏色，傳出keyword給演算法(不變成標籤，太麻煩；不給重複按，太麻煩)
 def userchoice_typeb1():
-    type_b1.config(bg='orangered', fg='white')
+    type_b1.config(bg='coral', fg='white')
     keyword.append('義大利麵')
 def userchoice_typeb2():
-    type_b2.config(bg='orangered', fg='white')
+    type_b2.config(bg='coral', fg='white')
     keyword.append('咖哩飯')
 def userchoice_typeb3():
-    type_b3.config(bg='orangered', fg='white')
+    type_b3.config(bg='coral', fg='white')
     keyword.append('早午餐')
 def userchoice_typeb4():
-    type_b4.config(bg='orangered', fg='white')
+    type_b4.config(bg='coral', fg='white')
     keyword.append('河粉')
 def userchoice_typeb5():
-    type_b5.config(bg='orangered', fg='white')
+    type_b5.config(bg='coral', fg='white')
     keyword.append('飯類')
 def userchoice_typeb6():
-    type_b6.config(bg='orangered', fg='white')
+    type_b6.config(bg='coral', fg='white')
     keyword.append('麵類')
 def userchoice_typeb7():
-    type_b7.config(bg='orangered', fg='white')
+    type_b7.config(bg='coral', fg='white')
     keyword.append('火鍋')
 def userchoice_typeb8():
-    type_b8.config(bg='orangered', fg='white')
+    type_b8.config(bg='coral', fg='white')
     keyword.append('水餃')
 def userchoice_typeb9():
-    type_b9.config(bg='orangered', fg='white')
+    type_b9.config(bg='coral', fg='white')
     keyword.append('披薩')
 def userchoice_typeb10():
-    type_b10.config(bg='orangered', fg='white')
+    type_b10.config(bg='coral', fg='white')
     keyword.append('燉飯')
 def userchoice_typeb11():
-    type_b11.config(bg='orangered', fg='white')
+    type_b11.config(bg='coral', fg='white')
     keyword.append('排餐')
 def userchoice_typeb12():
-    type_b12.config(bg='orangered', fg='white')
+    type_b12.config(bg='coral', fg='white')
     keyword.append('早餐')
 def userchoice_typeb13():
-    type_b13.config(bg='orangered', fg='white')
+    type_b13.config(bg='coral', fg='white')
     keyword.append('素食')
 def userchoice_typeb14():
-    type_b14.config(bg='orangered', fg='white')
+    type_b14.config(bg='coral', fg='white')
     keyword.append('漢堡')
 def userchoice_typeb15():
-    type_b15.config(bg='orangered', fg='white')
+    type_b15.config(bg='coral', fg='white')
     keyword.append('沙拉')
 def userchoice_typeb16():
-    type_b16.config(bg='orangered', fg='white')
+    type_b16.config(bg='coral', fg='white')
     keyword.append('飯糰')
 def userchoice_typeb17():
-    type_b17.config(bg='orangered', fg='white')
+    type_b17.config(bg='coral', fg='white')
     keyword.append('炸物')
 def userchoice_typeb18():
-    type_b18.config(bg='orangered', fg='white')
+    type_b18.config(bg='coral', fg='white')
     keyword.append('粥')
 def userchoice_typeb19():
-    type_b19.config(bg='orangered', fg='white')
+    type_b19.config(bg='coral', fg='white')
     keyword.append('吐司麵包')
 def userchoice_typeb20():
-    type_b20.config(bg='orangered', fg='white')
+    type_b20.config(bg='coral', fg='white')
     keyword.append('烤肉')
 def userchoice_typeb21():
-    type_b21.config(bg='orangered', fg='white')
+    type_b21.config(bg='coral', fg='white')
     keyword.append('便當')
 def userchoice_typeb22():
-    type_b22.config(bg='orangered', fg='white')
+    type_b22.config(bg='coral', fg='white')
     keyword.append('蛋包飯')
 def userchoice_typeb23():
-    type_b23.config(bg='orangered', fg='white')
+    type_b23.config(bg='coral', fg='white')
     keyword.append('關東煮')
 def userchoice_typeb24():
-    type_b24.config(bg='orangered', fg='white')
+    type_b24.config(bg='coral', fg='white')
     keyword.append('滷味')
 def userchoice_typeb25():
-    type_b25.config(bg='orangered', fg='white')
+    type_b25.config(bg='coral', fg='white')
     keyword.append('壽喜燒')
 def userchoice_typeb26():
-    type_b26.config(bg='orangered', fg='white')
+    type_b26.config(bg='coral', fg='white')
     keyword.append('咖啡廳')
 def userchoice_typeb27():
-    type_b27.config(bg='orangered', fg='white')
+    type_b27.config(bg='coral', fg='white')
     keyword.append('甜點')
 def userchoice_typeb28():
-    type_b28.config(bg='orangered', fg='white')
+    type_b28.config(bg='coral', fg='white')
     keyword.append('冰品')
 def userchoice_typeb29():
-    type_b29.config(bg='orangered', fg='white')
+    type_b29.config(bg='coral', fg='white')
     keyword.append('鹹食')
 
 # 按下"確定"後把當前所有按鈕標籤清理掉+跳回複數篩選
@@ -1077,58 +1077,58 @@ def clr2crt2_type_formulti():
 
 # 按了料理之後，變顏色，傳出keyword給演算法(不變成標籤，太麻煩；不給重複按，太麻煩)
 def userchoice_countryb1():
-    country_b1.config(bg='orangered', fg='white')
+    country_b1.config(bg='coral', fg='white')
     keyword.append('日式壽司')
 def userchoice_countryb2():
-    country_b2.config(bg='orangered', fg='white')
+    country_b2.config(bg='coral', fg='white')
     keyword.append('日式丼飯')
 def userchoice_countryb3():
-    country_b3.config(bg='orangered', fg='white')
+    country_b3.config(bg='coral', fg='white')
     keyword.append('日式拉麵')
 def userchoice_countryb4():
-    country_b4.config(bg='orangered', fg='white')
+    country_b4.config(bg='coral', fg='white')
     keyword.append('韓式料理')
 def userchoice_countryb5():
-    country_b5.config(bg='orangered', fg='white')
+    country_b5.config(bg='coral', fg='white')
     keyword.append('中東料理')
 def userchoice_countryb6():
-    country_b6.config(bg='orangered', fg='white')
+    country_b6.config(bg='coral', fg='white')
     keyword.append('印度料理')
 def userchoice_countryb7():
-    country_b7.config(bg='orangered', fg='white')
+    country_b7.config(bg='coral', fg='white')
     keyword.append('港式料理')
 def userchoice_countryb8():
-    country_b8.config(bg='orangered', fg='white')
+    country_b8.config(bg='coral', fg='white')
     keyword.append('越式料理')
 def userchoice_countryb9():
-    country_b9.config(bg='orangered', fg='white')
+    country_b9.config(bg='coral', fg='white')
     keyword.append('泰式料理')
 def userchoice_countryb10():
-    country_b10.config(bg='orangered', fg='white')
+    country_b10.config(bg='coral', fg='white')
     keyword.append('俄羅斯料理')
 def userchoice_countryb11():
-    country_b11.config(bg='orangered', fg='white')
+    country_b11.config(bg='coral', fg='white')
     keyword.append('地中海料理')
 def userchoice_countryb12():
-    country_b12.config(bg='orangered', fg='white')
+    country_b12.config(bg='coral', fg='white')
     keyword.append('馬來西亞料理')
 def userchoice_countryb13():
-    country_b13.config(bg='orangered', fg='white')
+    country_b13.config(bg='coral', fg='white')
     keyword.append('雲南料理')
 def userchoice_countryb14():
-    country_b14.config(bg='orangered', fg='white')
+    country_b14.config(bg='coral', fg='white')
     keyword.append('四川料理')
 def userchoice_countryb15():
-    country_b15.config(bg='orangered', fg='white')
+    country_b15.config(bg='coral', fg='white')
     keyword.append('南洋料理')
 def userchoice_countryb16():
-    country_b16.config(bg='orangered', fg='white')
+    country_b16.config(bg='coral', fg='white')
     keyword.append('以色列料理')
 def userchoice_countryb17():
-    country_b17.config(bg='orangered', fg='white')
+    country_b17.config(bg='coral', fg='white')
     keyword.append('加拿大料理')
 def userchoice_countryb18():
-    country_b18.config(bg='orangered', fg='white')
+    country_b18.config(bg='coral', fg='white')
     keyword.append('夏威夷生魚飯')
 
 # 按下"確定"後把當前所有按鈕標籤清理掉+跳回複選頁面
@@ -1235,64 +1235,64 @@ def clr2crt2_country_formulti():
 #價錢、地區、評價存入keyword
 
 def userchoice_region_b1():
-    region_b1.config(bg='orangered', fg='white')
+    region_b1.config(bg='coral', fg='white')
     keyword.append('溫州街')
 def userchoice_region_b2():
-    region_b2.config(bg='orangered', fg='white')
+    region_b2.config(bg='coral', fg='white')
     keyword.append('後門')
 def userchoice_region_b3():
-    region_b3.config(bg='orangered', fg='white')
+    region_b3.config(bg='coral', fg='white')
     keyword.append('公館')
 def userchoice_price_b1():
-    price_b1.config(bg='orangered', fg='white')
+    price_b1.config(bg='coral', fg='white')
     global upperbound
     upperbound = '100'
 def userchoice_price_b2():
-    price_b2.config(bg='orangered', fg='white')
+    price_b2.config(bg='coral', fg='white')
     global upperbound
     upperbound = '200'
 def userchoice_price_b3():
-    price_b3.config(bg='orangered', fg='white')
+    price_b3.config(bg='coral', fg='white')
     global upperbound
     upperbound = '300'
 def userchoice_price_b4():
-    price_b4.config(bg='orangered', fg='white')
+    price_b4.config(bg='coral', fg='white')
     global upperbound
     upperbound = '400'
 def userchoice_price_b5():
-    price_b5.config(bg='orangered', fg='white')
+    price_b5.config(bg='coral', fg='white')
     global upperbound
     upperbound = '500'
 def userchoice_price_b6():
-    price_b6.config(bg='orangered', fg='white')
+    price_b6.config(bg='coral', fg='white')
     global upperbound
     upperbound = '600'
 def userchoice_price_b7():
-    price_b7.config(bg='orangered', fg='white')
+    price_b7.config(bg='coral', fg='white')
     global upperbound
     upperbound = '700'
 def userchoice_price_b8():
-    price_b8.config(bg='orangered', fg='white')
+    price_b8.config(bg='coral', fg='white')
     global upperbound
     upperbound = '1000'
 def userchoice_value_b1():
-    value_b1.config(bg='orangered', fg='white')
+    value_b1.config(bg='coral', fg='white')
     global lowerbound
     lowerbound = '1'
 def userchoice_value_b2():
-    value_b2.config(bg='orangered', fg='white')
+    value_b2.config(bg='coral', fg='white')
     global lowerbound
     lowerbound = '2'
 def userchoice_value_b3():
-    value_b3.config(bg='orangered', fg='white')
+    value_b3.config(bg='coral', fg='white')
     global lowerbound
     lowerbound = '3'
 def userchoice_value_b4():
-    value_b4.config(bg='orangered', fg='white')
+    value_b4.config(bg='coral', fg='white')
     global lowerbound
     lowerbound = '4'
 def userchoice_value_b5():
-    value_b5.config(bg='orangered', fg='white')
+    value_b5.config(bg='coral', fg='white')
     global lowerbound
     lowerbound = '5'
 
