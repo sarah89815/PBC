@@ -29,7 +29,7 @@ window.resizable(False, False)
 # icon 待補
 #背景圖
 canvas = tk.Canvas(window, width=414,height=700,bg = 'white')
-imgpath = r'/Users/yuchiaching/Desktop/GitHub/PBC_Final/背景.png'
+imgpath = r'C:\\Users\\JasonChen\\Desktop\\github\\self_only\\back.png'
 img = Image.open(imgpath)
 photo = ImageTk.PhotoImage(img)
 canvas.create_image(212, 350,image=photo)
@@ -156,7 +156,7 @@ price_b4 = tk.Button(window, bg='cornsilk', fg="saddlebrown", text='< $400', fon
 price_b5 = tk.Button(window, bg='cornsilk', fg="saddlebrown", text='< $500', font=('Helvetica Neue', 15))
 price_b6 = tk.Button(window, bg='cornsilk', fg="saddlebrown", text='< $600', font=('Helvetica Neue', 15))
 price_b7 = tk.Button(window, bg='cornsilk', fg="saddlebrown", text='< $700', font=('Helvetica Neue', 15))
-price_b8 = tk.Button(window, bg='cornsilk', fg="saddlebrown", text='> $700', font=('Helvetica Neue', 15))
+price_b8 = tk.Button(window, bg='cornsilk', fg="saddlebrown", text='< $800', font=('Helvetica Neue', 15))
 # value線的部分
 secondquestion_value = tk.Label(window, text='你對評價的要求是甚麼？', bg='cornsilk' ,font=('Helvetica Neue',15), fg = 'saddlebrown')
 value_chose = tk.Label(window, text='評價', bg='coral',font=('Helvetica Neue', 15), fg='white')
@@ -184,7 +184,7 @@ price_b4 = tk.Button(window, bg='cornsilk', fg="saddlebrown", text='< $400', fon
 price_b5 = tk.Button(window, bg='cornsilk', fg="saddlebrown", text='< $500', font=('Helvetica Neue', 15))
 price_b6 = tk.Button(window, bg='cornsilk', fg="saddlebrown", text='< $600', font=('Helvetica Neue', 15))
 price_b7 = tk.Button(window, bg='cornsilk', fg="saddlebrown", text='< $700', font=('Helvetica Neue', 15))
-price_b8 = tk.Button(window, bg='cornsilk', fg="saddlebrown", text='> $700', font=('Helvetica Neue', 15))
+price_b8 = tk.Button(window, bg='cornsilk', fg="saddlebrown", text='< $800', font=('Helvetica Neue', 15))
 value_b1 = tk.Button(window, bg='cornsilk', fg="saddlebrown", text='>=1星', font=('Helvetica Neue', 15))
 value_b2 = tk.Button(window, bg='cornsilk', fg="saddlebrown", text='>=2星', font=('Helvetica Neue', 15))
 value_b3 = tk.Button(window, bg='cornsilk', fg="saddlebrown", text='>=3星', font=('Helvetica Neue', 15))
@@ -724,7 +724,7 @@ def clear2_priceb7():
 def clear2_priceb8():
     clear2_price()
     global upperbound
-    upperbound = '1000'
+    upperbound = '801'
     lastmove()
 
 # 按下"價錢"後，原對話上移，但其實是重新建造新對話框
@@ -1274,7 +1274,7 @@ def userchoice_price_b7():
 def userchoice_price_b8():
     price_b8.config(bg='coral', fg='white')
     global upperbound
-    upperbound = '1000'
+    upperbound = '801'
 def userchoice_value_b1():
     value_b1.config(bg='coral', fg='white')
     global lowerbound
@@ -1428,7 +1428,7 @@ class Store:
 stores = list()
 
 # 記得改成存檔案的地方
-filepath = r'/Users/yuchiaching/Desktop/GitHub/PBC_Final/store_info_final.csv'
+filepath = r'C:\\Users\\JasonChen\\Desktop\\github\\pbc~final\\store_info_final.csv'
 
 with open(file=filepath, mode='r', encoding='utf-8', newline='') as csvfile:
     rows = csv.reader(csvfile)
@@ -1521,7 +1521,7 @@ def ranking_choose(store_list, lowerbound):
 
 
 # 解決 matplotlib 中文字型問題
-fpath = '/Users/yuchiaching/Desktop/GitHub/PBC_Final/jhenghei bold.ttf'
+fpath = 'C:\\Users\\JasonChen\\Desktop\\github\\pbc~final\\jhenghei bold.ttf'
 prop = fm.FontProperties(fname=fpath)
 
 
@@ -1543,7 +1543,7 @@ def food_map(store_list):
     x, y = (lons, lats) # transform coordinates 
 
     # 讀入地圖底圖
-    img = plt.imread("/Users/yuchiaching/Desktop/完稿壓縮正確尺寸/地圖＋畫框.png")
+    img = plt.imread("C:\\Users\\JasonChen\\Desktop\\github\\pbc~final\\地圖＋畫框.png")
     # 建立畫框和圖表
     fig, ax = plt.subplots(figsize=(16, 10), dpi=70)
     # 圖表顯示地圖底圖以及設定座標軸
