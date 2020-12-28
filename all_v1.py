@@ -29,7 +29,7 @@ window.resizable(False, False)
 # icon 待補
 #背景圖
 canvas = tk.Canvas(window, width=414,height=700,bg = 'white')
-imgpath = r'C:\\Users\\JasonChen\\Desktop\\github\\self_only\\back.png'
+imgpath = r'/Users/yuchiaching/Desktop/GitHub/PBC_Final/背景.png'
 img = Image.open(imgpath)
 photo = ImageTk.PhotoImage(img)
 canvas.create_image(212, 350,image=photo)
@@ -1428,7 +1428,7 @@ class Store:
 stores = list()
 
 # 記得改成存檔案的地方
-filepath = r'C:\\Users\\JasonChen\\Desktop\\github\\pbc~final\\store_info_final.csv'
+filepath = r'/Users/yuchiaching/Desktop/GitHub/PBC_Final/store_info_final.csv'
 
 with open(file=filepath, mode='r', encoding='utf-8', newline='') as csvfile:
     rows = csv.reader(csvfile)
@@ -1521,7 +1521,7 @@ def ranking_choose(store_list, lowerbound):
 
 
 # 解決 matplotlib 中文字型問題
-fpath = 'C:\\Users\\JasonChen\\Desktop\\github\\pbc~final\\jhenghei bold.ttf'
+fpath = '/Users/yuchiaching/Desktop/GitHub/PBC_Final/jhenghei bold.ttf'
 prop = fm.FontProperties(fname=fpath)
 
 
@@ -1543,13 +1543,14 @@ def food_map(store_list):
     x, y = (lons, lats) # transform coordinates 
 
     # 讀入地圖底圖
-    img = plt.imread("C:\\Users\\JasonChen\\Desktop\\github\\pbc~final\\地圖＋畫框.png")
+    img = plt.imread("/Users/yuchiaching/Desktop/GitHub/PBC_Final/地圖＋畫框.png")
     # 建立畫框和圖表
-    fig, ax = plt.subplots(figsize=(16, 10), dpi=70)
+    fig, ax = plt.subplots(figsize=(16, 10), dpi=65)
+    plt.subplots_adjust(left=0.02, bottom=0, right=0.98, top=1, wspace=0, hspace=0)
     # 圖表顯示地圖底圖以及設定座標軸
-    ax.imshow(img, extent=[121.5136161, 121.5480002, 25.00897, 25.02854])
+    ax.imshow(img, extent=[121.5136161, 121.5474519, 25.00897, 25.02854])
     # 不顯示座標軸
-    # plt.axis('off')
+    plt.axis('off')
 
     # 標示商家位置
     line, = ax.plot(x, y, ls="", marker='o', color='#fa4a0c') 
