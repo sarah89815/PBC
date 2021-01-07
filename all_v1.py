@@ -1543,7 +1543,7 @@ def food_map(store_list):
     x, y = (lons, lats) # transform coordinates 
 
     # 讀入地圖底圖
-    img = plt.imread("/Users/yuchiaching/Desktop/GitHub/PBC_Final/地圖＋畫框.png")
+    img = plt.imread("/Users/yuchiaching/Desktop/GitHub/PBC_Final/地圖.png")
     # 建立畫框和圖表
     fig, ax = plt.subplots(figsize=(16, 10), dpi=65)
     plt.subplots_adjust(left=0.02, bottom=0, right=0.98, top=1, wspace=0, hspace=0)
